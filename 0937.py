@@ -55,9 +55,15 @@ class Logic:
             
         self.play()
 
-
+ 
 class Check:
+    """
+    Проверяет победу в игре крестики-нолики по горизонталиб вертикали и диагонали.
+    """
     def check_horizontal(self):
+        """
+        Проверяет, есть ли три одинаковых символа в строках.
+        """
         check = []; counter = 0; start = 0
         for i in range(start, len(keys)):
             check.append(keys[i]); counter += 1
@@ -134,9 +140,15 @@ class Utils:
         print()
         
     def error_input(self) -> str:
+        """
+        Обрабатывает некорректный ввод игрока и перерисовывает поле.
+        """
         print(line_break + space[:-2] + "ввод не корректный"); sleep(1)
         os.system("cls" if os.name == "nt" else "clear")
         utils = Utils(); utils.text()
 
 logic = Logic()
 logic.play()
+
+if __name__ == '__main__':
+    main()
